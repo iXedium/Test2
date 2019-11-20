@@ -1,14 +1,19 @@
 $primary: #0799d4;
+$secondary: #005792;
 $sideColor: #f7f7f7;
 
 
 html {
-  height: 100%;
+  height: 1080px;
+  width: 1920px;
   font-family: roboto;
+  margin: auto;
+  // position: relative;
+  // vertical-align: middle;
 }
 body {
   height: 100%;
-  margin: 0;
+  //margin: 0;
 }
 
 #root {
@@ -18,8 +23,9 @@ body {
 }
 
 .x-header {
-  background-color: red;
+  background-color: $secondary;
   width: 100%;
+  height: 80px;
   flex: 0 1;
 }
 .x-main {
