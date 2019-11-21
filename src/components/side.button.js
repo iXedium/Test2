@@ -7,7 +7,7 @@ function SideButton(props) {
       className={`x-side-button ${props.active ? "active" : ""}`}
       onClick={props.onClick}
     >
-      <img src={props.imageSource} alt={props.alt}></img>
+      <img src={props.imageSource} alt={props.title}></img>
       <span>{props.title}</span>
     </div>
   );

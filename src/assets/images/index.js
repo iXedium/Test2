@@ -1,0 +1,6 @@
+export const Logo = require('./logo/logo.svg')
+export const Dashboard = require('./side-buttons/dashboard.svg')
+export const Organisations = require('./side-buttons/organisations.svg')
+export const Patients = require('./side-buttons/patients.svg')
+export const Settings = require('./side-buttons/settings.svg')
+export const Staff = require('./side-buttons/staff.svg')

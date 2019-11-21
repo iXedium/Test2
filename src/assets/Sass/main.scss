@@ -3,6 +3,8 @@ $darkBlue: #005792;
 $lightGrey: #f7f7f7;
 $midGrey: #ececec;
 
+$sideWidth: 12em;
+
 html {
   height: 1080px;
   width: 1920px;
@@ -13,7 +15,7 @@ html {
 }
 body {
   height: 100%;
-  //margin: 0;
+  // margin: 0;
 }
 
 #root {
@@ -32,7 +34,11 @@ body {
   align-items: center;
   
   .x-logo {
-    margin: 1.5em;
+    //margin: 1.5em;
+    width: $sideWidth;
+    text-align: center;
+    vertical-align: middle;
+
   }
   .x-spacer{
     flex-grow: 1;
@@ -57,7 +63,8 @@ body {
 
 .x-side {
   background-color: $lightBlue;
-  padding-top: 1em;
+  width: $sideWidth;
+  padding-top: 4em;
 }
 
 .x-content {
@@ -70,6 +77,9 @@ body {
   color: $lightGrey;
   margin-bottom: 0.4em;
   padding: 0.6em 1em;
+  cursor: pointer;
+  width: 10em;
+
   span {
     padding-left: 0.4em;
   }

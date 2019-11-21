@@ -1,5 +1,5 @@
 import React from "react";
-import logoImage from "../../assets/images/logo_splash.svg";
+import { Logo } from "../../assets/images";
 
 const Header = () => {
   const date = new Date();
@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <div className="x-header">
       <div className="x-logo">
-        <img src={logoImage} alt="Logo" />
+        <img src={Logo} alt="Logo" />
       </div>
       <div className="x-spacer"></div>
       <div className="x-date">{dateFormat(date, "longDate")}</div>
