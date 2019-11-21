@@ -34,7 +34,7 @@ body {
   align-items: center;
 
   .x-logo {
-    margin: 1.4em 0;
+    margin: 1.6em 0 1.4em 0;
     width: $sideWidth;
     text-align: center;
     vertical-align: middle;
@@ -96,8 +96,8 @@ body {
     content: ">";
     display: inline-block;
     position: absolute;
-    transform: scaleY(2.5);
-    left: 10.8em;
+    transform: scaleY(2.2);
+    left: $sideWidth - 1.2em;
     color: $lightBlue;
   }
 }
