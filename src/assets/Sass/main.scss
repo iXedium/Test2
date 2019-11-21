@@ -1,7 +1,7 @@
-$primary: #0799d4;
-$secondary: #005792;
-$sideColor: #f7f7f7;
-
+$lightBlue: #0799d4;
+$darkBlue: #005792;
+$lightGrey: #f7f7f7;
+$midGrey: #ececec;
 
 html {
   height: 1080px;
@@ -23,11 +23,30 @@ body {
 }
 
 .x-header {
-  background-color: $secondary;
+  background-color: $darkBlue;
   width: 100%;
-  height: 80px;
   flex: 0 1;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  align-items: center;
+  
+  .x-logo {
+    margin: 1.5em;
+  }
+  .x-spacer{
+    flex-grow: 1;
+  }
+  .x-date {
+    font-size: 1em;
+    margin: 1em;
+  }
+  .x-user {
+    font-size: 1em;
+    margin: 1em 2em;
+  }
 }
+
 .x-main {
   background-color: blue;
   flex: 1 0;
@@ -37,26 +56,25 @@ body {
 }
 
 .x-side {
-  background-color: green;  
-  background-color: $primary;
-  padding-top:1em;
+  background-color: $lightBlue;
+  padding-top: 1em;
 }
 
 .x-content {
-  background-color: antiquewhite;
+  background-color: $midGrey;
   flex: 1;
   padding: 1em;
 }
 
 .x-side-button {
-  color: $sideColor;
+  color: $lightGrey;
   margin-bottom: 0.4em;
-    padding: 0.6em 1em;
-  span{
-     padding-left:0.4em; 
+  padding: 0.6em 1em;
+  span {
+    padding-left: 0.4em;
   }
 
-  &.active{
-      background-color: darken($primary,10%);
+  &.active {
+    background-color: darken($lightBlue, 10%);
   }
 }
