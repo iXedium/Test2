@@ -1,6 +1,5 @@
 import React from "react";
 
-import { FaAddressBook } from "react-icons/fa";
 
 function SideButton(props) {
   return (
@@ -8,7 +7,7 @@ function SideButton(props) {
       className={`x-side-button ${props.active ? "active" : ""}`}
       onClick={props.onClick}
     >
-      <FaAddressBook></FaAddressBook>
+      <img src={props.imageSource} alt={props.alt}></img>
       <span>{props.title}</span>
     </div>
   );
