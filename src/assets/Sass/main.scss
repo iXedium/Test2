@@ -32,23 +32,22 @@ body {
   flex-direction: row;
   color: white;
   align-items: center;
-  
+
   .x-logo {
-    //margin: 1.5em;
+    margin: 1.4em 0;
     width: $sideWidth;
     text-align: center;
     vertical-align: middle;
-
   }
-  .x-spacer{
+  .x-spacer {
     flex-grow: 1;
   }
   .x-date {
-    font-size: 1em;
+    // font-size: 1em;
     margin: 1em;
   }
   .x-user {
-    font-size: 1em;
+    // font-size: 1em;
     margin: 1em 2em;
   }
 }
@@ -56,7 +55,6 @@ body {
 .x-main {
   background-color: blue;
   flex: 1 0;
-
   display: flex;
   flex-direction: row;
 }
@@ -76,15 +74,30 @@ body {
 .x-side-button {
   color: $lightGrey;
   margin-bottom: 0.4em;
-  padding: 0.6em 1em;
+  padding: 0.6em 1.5em;
+  position: relative;
   cursor: pointer;
-  width: 10em;
+  // width: 10em;
+
+  img {
+    padding: 0 0.2em;
+    vertical-align: middle;
+  }
 
   span {
+    vertical-align: middle;
     padding-left: 0.4em;
   }
 
   &.active {
     background-color: darken($lightBlue, 10%);
+  }
+  &.active:after {
+    content: ">";
+    display: inline-block;
+    position: absolute;
+    transform: scaleY(2.5);
+    left: 10.8em;
+    color: $lightBlue;
   }
 }
