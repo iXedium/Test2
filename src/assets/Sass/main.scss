@@ -76,33 +76,42 @@ body {
 }
 
 .x-side-button {
-  color: $lightGrey;
-  margin-bottom: 0.4em;
-  padding: 0.6em 1.5em;
-  position: relative;
-  cursor: pointer;
-  // width: 10em;
+
+  div {
+    margin-bottom: 0.4em;
+    padding: 0.6em 1.5em;
+    position: relative;
+    cursor: pointer;
+    // width: 10em;
+  }
 
   img {
     padding: 0 0.2em;
     vertical-align: middle;
   }
 
+  &:link {
+    text-decoration: none;
+  }
+
   span {
+    color: $lightGrey;
     vertical-align: middle;
     padding-left: 0.4em;
   }
 
   &.active {
-    background-color: darken($lightBlue, 10%);
-  }
-  &.active:after {
-    content: ">";
-    display: inline-block;
-    position: absolute;
-    transform: scaleY(2.2);
-    left: $sideWidth - 1.2em;
-    color: $lightBlue;
+    div {
+      background-color: darken($lightBlue, 10%);
+    }
+    span:after{
+      content: ">";
+      display: inline;
+      position: absolute;
+      transform: scaleY(2.2);
+      left: $sideWidth - 1.2em;
+      color:$lightBlue;
+    }
   }
 }
 
@@ -133,7 +142,7 @@ body {
   .x-grid-number {
     width: 2.5em;
     padding: 0.8em;
-    margin-top:.8em;
+    margin-top: 0.8em;
     color: $darkBlue;
     font-weight: bold;
     font-size: 2em;
@@ -148,6 +157,6 @@ body {
     color: black;
     text-align: center;
     font-weight: bold;
-    margin-top:1em
+    margin-top: 1em;
   }
 }

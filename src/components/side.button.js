@@ -1,16 +1,22 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
-
-function SideButton(props) {
+const SideButton = props => {
   return (
-    <div
-      className={`x-side-button ${props.active ? "active" : ""}`}
-      onClick={props.onClick}
+    <NavLink
+      to={props.link}
+      exact={props.exact}
+      activeClassName="active"
+      className="x-side-button"
     >
-      <img src={props.imageSource} alt={props.title}></img>
-      <span>{props.title}</span>
-    </div>
+      <div
+      //  className="x-side-button"
+       >
+        <img src={props.imageSource} alt={props.title}></img>
+        <span>{props.title}</span>
+      </div>
+    </NavLink>
   );
-}
+};
 
 export default SideButton;

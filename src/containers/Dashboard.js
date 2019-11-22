@@ -26,9 +26,6 @@ const Dashboard = () => {
           <div className="x-grid-line"></div>
           <p className="x-grid-title">Data Logs</p>
         </div>
-        {/* <li>Staff</li>
-        <li>Patients</li>
-        <li>Data Logs</li> */}
       </div>
     </div>
   );

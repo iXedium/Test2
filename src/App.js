@@ -1,13 +1,15 @@
-import React ,{useState} from "react";
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
 import "./assets/Sass/main.scss";
-import SideButton from "./components/side.button";
-import { setState } from "expect/build/jestMatchersObject";
-import Main from "./components/layout/Main";
+// import SideButton from "./components/side.button";
+// import { setState } from "expect/build/jestMatchersObject";
+import Layout from "./layout/Layout";
 
 function App() {
-   
   return (
-    <Main/>
+    <BrowserRouter>
+      <Layout isAuthenticated />
+    </BrowserRouter>
   );
 }
 

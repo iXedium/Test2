@@ -1,5 +1,5 @@
 import React from "react";
-import { logo_img } from "../../assets/images";
+import { logo_img } from "../assets/images";
 
 const Header = () => {
   const date = new Date();
