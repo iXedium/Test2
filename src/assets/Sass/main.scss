@@ -5,6 +5,10 @@ $midGrey: #ececec;
 
 $sideWidth: 12em;
 
+* {
+  margin: 0;
+}
+
 html {
   height: 1080px;
   width: 1920px;
@@ -68,7 +72,7 @@ body {
 .x-content {
   background-color: $midGrey;
   flex: 1;
-  padding: 1em;
+  padding: 2em;
 }
 
 .x-side-button {
@@ -99,5 +103,51 @@ body {
     transform: scaleY(2.2);
     left: $sideWidth - 1.2em;
     color: $lightBlue;
+  }
+}
+
+.x-dashboard {
+  // padding: 2em;
+  h1 {
+    color: $darkBlue;
+    // margin: 1em;
+  }
+  .x-breadcrumb {
+    margin: 1em;
+  }
+}
+
+.x-grid {
+  display: flex;
+
+  .x-grid-item {
+    width: 12.5em;
+    height: 11.25em;
+    background-color: white;
+    margin: 0.65em;
+    border-radius: 3%;
+    display: flex;
+    flex-direction: column;
+    // flex: 0 1;
+  }
+  .x-grid-number {
+    width: 2.5em;
+    padding: 0.8em;
+    margin-top:.8em;
+    color: $darkBlue;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+    border-bottom: 3px solid $darkBlue;
+    align-self: center;
+  }
+  .x-grid-line {
+    color: $darkBlue;
+  }
+  .x-grid-title {
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    margin-top:1em
   }
 }
