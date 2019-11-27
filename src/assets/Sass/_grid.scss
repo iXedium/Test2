@@ -1,0 +1,36 @@
+.x-grid {
+    display: flex;
+
+    .x-grid-item {
+        width: 12.5em;
+        height: 11.25em;
+        background-color: white;
+        margin: 0.65em;
+        border-radius: 3%;
+        display: flex;
+        flex-direction: column;
+        // flex: 0 1;
+    }
+
+    .x-grid-number {
+        padding: 0.8em;
+        margin-top: 0.8em;
+        color: $darkBlue;
+        font-weight: bold;
+        font-size: 2em;
+        text-align: center;
+        border-bottom: 3px solid $darkBlue;
+        align-self: center;
+    }
+
+    .x-grid-line {
+        color: $darkBlue;
+    }
+
+    .x-grid-title {
+        color: black;
+        text-align: center;
+        font-weight: bold;
+        // margin-top: 1em;
+    }
+}

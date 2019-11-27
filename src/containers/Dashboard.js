@@ -3,7 +3,7 @@ import React from "react";
 const Dashboard = () => {
   return (
     <div className="x-dashboard">
-      <h1>Dashboard</h1>
+      <h1 className="x-page-title">Dashboard</h1>
       <p className="x-breadcrumb">BREADCRUMB</p>
       <div className="x-grid">
         <div className="x-grid-item">

@@ -1,0 +1,45 @@
+.x-side {
+    background-color: $lightBlue;
+    width: $sideWidth;
+    padding-top: 4em;
+}
+
+.x-side-button {
+
+    div {
+        margin-bottom: 0.4em;
+        padding: 0.6em 1.5em;
+        position: relative;
+        cursor: pointer;
+    }
+
+    img {
+        padding: 0 0.2em;
+        vertical-align: middle;
+    }
+
+    &:link {
+        text-decoration: none;
+    }
+
+    span {
+        color: $lightGrey;
+        vertical-align: middle;
+        padding-left: 0.4em;
+    }
+
+    &.active {
+        div {
+            background-color: darken($lightBlue, 10%);
+        }
+
+        span:after {
+            content: ">";
+            display: inline;
+            position: absolute;
+            transform: scaleY(2.2);
+            left: $sideWidth - 1.2em;
+            color: $lightBlue;
+        }
+    }
+}

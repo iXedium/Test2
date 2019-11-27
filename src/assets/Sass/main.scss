@@ -1,9 +1,8 @@
-$lightBlue: #0799d4;
-$darkBlue: #005792;
-$lightGrey: #f7f7f7;
-$midGrey: #ececec;
-
-$sideWidth: 12em;
+@import 'variables';
+@import 'header';
+@import 'sidebar';
+@import 'grid';
+@import 'organisations';
 
 * {
   margin: 0;
@@ -17,7 +16,9 @@ html {
   // position: relative;
   // vertical-align: middle;
 }
+
 body {
+  font-family: roboto;
   height: 100%;
   // margin: 0;
 }
@@ -28,45 +29,11 @@ body {
   height: 100%;
 }
 
-.x-header {
-  background-color: $darkBlue;
-  width: 100%;
-  flex: 0 1;
-  display: flex;
-  flex-direction: row;
-  color: white;
-  align-items: center;
-
-  .x-logo {
-    margin: 1.6em 0 1.4em 0;
-    width: $sideWidth;
-    text-align: center;
-    vertical-align: middle;
-  }
-  .x-spacer {
-    flex-grow: 1;
-  }
-  .x-date {
-    // font-size: 1em;
-    margin: 1em;
-  }
-  .x-user {
-    // font-size: 1em;
-    margin: 1em 2em;
-  }
-}
-
 .x-main {
-  background-color: blue;
+  // background-color: blue;
   flex: 1 0;
   display: flex;
   flex-direction: row;
-}
-
-.x-side {
-  background-color: $lightBlue;
-  width: $sideWidth;
-  padding-top: 4em;
 }
 
 .x-content {
@@ -75,88 +42,10 @@ body {
   padding: 2em;
 }
 
-.x-side-button {
-
-  div {
-    margin-bottom: 0.4em;
-    padding: 0.6em 1.5em;
-    position: relative;
-    cursor: pointer;
-    // width: 10em;
-  }
-
-  img {
-    padding: 0 0.2em;
-    vertical-align: middle;
-  }
-
-  &:link {
-    text-decoration: none;
-  }
-
-  span {
-    color: $lightGrey;
-    vertical-align: middle;
-    padding-left: 0.4em;
-  }
-
-  &.active {
-    div {
-      background-color: darken($lightBlue, 10%);
-    }
-    span:after{
-      content: ">";
-      display: inline;
-      position: absolute;
-      transform: scaleY(2.2);
-      left: $sideWidth - 1.2em;
-      color:$lightBlue;
-    }
-  }
+.x-page-title {
+  color: $darkBlue;
 }
 
-.x-dashboard {
-  // padding: 2em;
-  h1 {
-    color: $darkBlue;
-    // margin: 1em;
-  }
-  .x-breadcrumb {
-    margin: 1em;
-  }
-}
-
-.x-grid {
-  display: flex;
-
-  .x-grid-item {
-    width: 12.5em;
-    height: 11.25em;
-    background-color: white;
-    margin: 0.65em;
-    border-radius: 3%;
-    display: flex;
-    flex-direction: column;
-    // flex: 0 1;
-  }
-  .x-grid-number {
-    width: 2.5em;
-    padding: 0.8em;
-    margin-top: 0.8em;
-    color: $darkBlue;
-    font-weight: bold;
-    font-size: 2em;
-    text-align: center;
-    border-bottom: 3px solid $darkBlue;
-    align-self: center;
-  }
-  .x-grid-line {
-    color: $darkBlue;
-  }
-  .x-grid-title {
-    color: black;
-    text-align: center;
-    font-weight: bold;
-    margin-top: 1em;
-  }
+.x-breadcrumb {
+  margin: 1em;
 }
