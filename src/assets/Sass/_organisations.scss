@@ -1,0 +1,45 @@
+.x-organisations{
+    table{
+        margin: 6em 3em;
+        width: auto;
+
+
+        thead{
+            background-color: $lightGrey;
+        }
+    }
+
+    Button{
+        background-color: $lightBlue;
+        border: 0;
+        width: 8em;
+
+        &:hover{
+            background-color: $darkBlue;
+            border-color: $darkBlue;
+        }
+    }
+
+    &__container{
+        display: flex;
+        background-color: white;
+        // padding: 0 3em;
+        
+        flex-direction: column;
+        
+        &__top{
+            border-bottom: 2px solid $darkGrey;
+            padding: 2em 3em;
+            Button{
+                width: auto;
+
+                img{
+                    margin-left: 1em;
+                }
+            }
+        }
+
+
+
+    }
+}
