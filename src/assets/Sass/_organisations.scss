@@ -1,45 +1,98 @@
-.x-organisations{
-    table{
-        margin: 6em 3em;
-        width: auto;
+.x-organisations {
 
-
-        thead{
-            background-color: $lightGrey;
+    .bs-select {
+        select {
+            display: none;
         }
     }
 
-    Button{
+    .dataTables_filter{
+        text-align: right;
+        position: relative;
+        top: -6.5em;
+    }
+
+    input.form-control {
+        border-radius: 5px;
+        border: none;
+        //background: #333 url(../images/icons/search.svg) no-repeat 7px 7px;
+        background: url(../images/icons/search.svg) no-repeat 7px 7px;
+        background-position: 92% 50%;
+        background-color: $lightGrey;
+        color: #333;
+        height: 3em;
+        width: 16em;
+
+    }
+
+    Button {
+        width: auto;
         background-color: $lightBlue;
         border: 0;
-        width: 8em;
 
-        &:hover{
+        img {
+            margin-left: 1em;
+        }
+
+        &:hover {
             background-color: $darkBlue;
             border-color: $darkBlue;
         }
     }
 
-    &__container{
+    &__container {
+        margin-top: 3em;
         display: flex;
         background-color: white;
-        // padding: 0 3em;
-        
         flex-direction: column;
-        
-        &__top{
+        border-radius: 5px;
+
+        &__top {
             border-bottom: 2px solid $darkGrey;
             padding: 2em 3em;
-            Button{
-                width: auto;
+        }
+        
+        &__main {
+            display: flex;
+            padding: 2em 3em;
+            padding-top: 2em;
 
-                img{
-                    margin-left: 1em;
-                }
+            .dataTables_wrapper {
+                flex: 1 0;
             }
         }
+    }
 
+    table {
+        //margin: 5em 3em;
+        //width: auto;
+        border: 2px solid $lightGrey;
 
+        thead {
+            background-color: $lightGrey;
+            border-bottom: 0;
+        }
 
+        th,
+        td {
+            padding: 2em;
+            vertical-align: middle;
+        }
+
+        tr {
+            border-bottom: 2px solid $lightGrey;
+        }
+
+        Button {
+            width: 8em;
+        }
+
+        td:nth-child(6) {
+            text-align: right;
+        }
+
+        tbody+thead {
+            display: none;
+        }
     }
 }

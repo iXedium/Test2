@@ -1,6 +1,6 @@
-import React, { useState, Suspense } from "react";
+import React /*,{ useState, Suspense }*/ from  "react";
 import { Route, Switch, withRouter, Redirect } from "react-router-dom";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 
 import SideButton from "../components/side.button";
 import Header from "./Header";

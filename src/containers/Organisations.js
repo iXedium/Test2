@@ -1,5 +1,8 @@
 import React from "react";
-import { Button, Container } from "reactstrap";
+import { Button } from "reactstrap";
+import { MDBDataTable } from "mdbreact";
+import { organisationData as data } from "../data/Organisations_data";
+
 import plusSign from "../assets/images/icons/button_plus.svg";
 
 const Organisations = () => {
@@ -16,8 +19,18 @@ const Organisations = () => {
             </span>
           </Button>
         </div>
-
-        <table className="table">
+        <div className="x-organisations__container__main">
+          <MDBDataTable
+            btn
+            hover
+            data={data}
+            entries={3}
+            info={false}
+            entriesLabel=""
+            searchLabel=" "
+          />
+        </div>
+        {/* <table className="table table-borderless">
           <thead>
             <tr>
               <th scope="col">Date Registered</th>
@@ -90,7 +103,7 @@ const Organisations = () => {
               </td>
             </tr>
           </tbody>
-        </table>
+        </table> */}
       </div>
     </div>
   );
