@@ -1,15 +1,17 @@
-import React /*,{ useState, Suspense }*/ from "react";
+import React from "react";
 import { Route, Switch, withRouter, Redirect } from "react-router-dom";
 // import { connect } from "react-redux";
 
-import SideButton from "../components/side.button";
+
 import Header from "./Header";
-import * as images from "../assets/images";
-import Dashboard from "../containers/Dashboard";
-import Organisations from "../containers/Organisations";
-import Patients from "../containers/Patients";
-import Staff from "../containers/Staff";
-import Settings from "../containers/Settings";
+import SideBar from "./SideBar";
+
+
+import Dashboard from "../components/Dashboard";
+import Organisations from "../components/Organisations";
+import Patients from "../components/Patients";
+import Staff from "../components/Staff";
+import Settings from "../components/Settings";
 // import Login from "../containers/Login";
 
 const Layout = props => {
@@ -46,34 +48,10 @@ const Layout = props => {
     <React.Fragment>
       <Header />
       <div className="x-main">
-        <div className="x-side">
-          <SideButton
-            title="Dashboard"
-            imageSource={images.dash_img}
-            link="/dashboard"
-          ></SideButton>
-          <SideButton
-            title="Organisations"
-            imageSource={images.org_img}
-            link="/organisations"
-          ></SideButton>
-          <SideButton
-            title="Staff"
-            imageSource={images.stf_img}
-            link="/staff"
-          ></SideButton>
-          <SideButton
-            title="Patients"
-            imageSource={images.pat_img}
-            link="/patients"
-          ></SideButton>
-          <SideButton
-            title="Settings"
-            imageSource={images.set_img}
-            link="/settings"
-          ></SideButton>
-        </div>
-        <div className="x-content">{routes}</div>
+        <SideBar />
+        <main className="x-content">
+          {routes}
+        </main>
       </div>
     </React.Fragment>
   );
