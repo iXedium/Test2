@@ -1,5 +1,5 @@
 .x-side {
-    background-color: $lightBlue;
+    background-color: $primary;
     width: $sideWidth;
     padding-top: 4em;
 }
@@ -30,7 +30,7 @@
 
     &.active {
         div {
-            background-color: darken($lightBlue, 10%);
+            background-color: darken($primary, 10%);
         }
 
         span:after {
@@ -39,7 +39,7 @@
             position: absolute;
             transform: scaleY(2.2);
             left: $sideWidth - 1.2em;
-            color: $lightBlue;
+            color: $primary;
         }
     }
 }

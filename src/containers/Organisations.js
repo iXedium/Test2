@@ -12,7 +12,7 @@ const Organisations = () => {
       <p className="x-breadcrumb">BREADCRUMB</p>
       <div className="x-organisations__container">
         <div className="x-organisations__container__top">
-          <Button>
+          <Button color='primary'>
             Add Organisation
             <span>
               <img src={plusSign} alt="" />

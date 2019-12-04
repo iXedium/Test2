@@ -1,4 +1,4 @@
-import React /*,{ useState, Suspense }*/ from  "react";
+import React /*,{ useState, Suspense }*/ from "react";
 import { Route, Switch, withRouter, Redirect } from "react-router-dom";
 // import { connect } from "react-redux";
 
@@ -10,6 +10,7 @@ import Organisations from "../containers/Organisations";
 import Patients from "../containers/Patients";
 import Staff from "../containers/Staff";
 import Settings from "../containers/Settings";
+// import Login from "../containers/Login";
 
 const Layout = props => {
   // const [page, setPage] = useState(1);
@@ -34,8 +35,7 @@ const Layout = props => {
         <Route path="/staff" render={props => <Staff {...props} />} />
         <Route path="/patients" render={props => <Patients {...props} />} />
         <Route path="/settings" render={props => <Settings {...props} />} />
-        {/* <Route path="/logout" component={Logout} />
-        <Route path="/auth" render={props => <Auth {...props} />} /> */}
+        {/* <Route path="/logout" component={Logout} /> */}
         <Route path="/" exact render={props => <Dashboard {...props} />} />
         <Redirect to="/" />
       </Switch>

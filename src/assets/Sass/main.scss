@@ -1,8 +1,13 @@
 @import 'variables';
+@import "bootstrap/scss/bootstrap";
+// @import "bootstrap/scss/_functions";
+// @import "bootstrap/scss/_variables";
+// @import "bootstrap/scss/_mixins";
 @import 'header';
 @import 'sidebar';
 @import 'grid';
 @import 'organisations';
+@import 'login';
 
 * {
   margin: 0;
@@ -11,13 +16,15 @@
 html {
   height: 1080px;
   width: 1920px;
-  font-family: roboto;
+  // font-family: roboto;
   margin: auto;
+  background-color: white;
   // position: relative;
   // vertical-align: middle;
 }
 
 body {
+  background-color: $darkBlue;
   font-family: roboto;
   height: 100%;
   // margin: 0;
