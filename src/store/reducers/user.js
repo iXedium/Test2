@@ -20,7 +20,6 @@ const changeProfileStart = (state, action) => {
 
 const changeProfileSuccess = (state, action) => {
   const newUser = updateObject(action.userData, { id: action.userId });
-  console.log("user", newUser);
   return updateObject(state, {
     loading: false,
     changed: true,
@@ -38,7 +37,6 @@ const fetchUserStart = (state, action) => {
 };
 
 const fetchUserSuccess = (state, action) => {
-  console.log("user", action.user);
   return updateObject(state, {
     first: action.user.first,
     last: action.user.last,

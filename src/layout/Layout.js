@@ -3,7 +3,7 @@ import { Route, Switch, withRouter, Redirect } from "react-router-dom";
 // import { connect } from "react-redux";
 
 
-import Header from "./Header";
+import Header from "../components/Header/Header";
 import SideBar from "./SideBar";
 
 

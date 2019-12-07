@@ -22,21 +22,22 @@
         margin: 1em;
     }
 
-    .x-user-header {
+    &-user {
         margin: 1em 2em;
         display: flex;
-        font-size: 1.25em;
+        font-size: 1.1em;
+        cursor: pointer;
 
 
 
         &__text {
-            margin-left: 1em;
+            margin-left: .5em;
             display: flex;
             flex-direction: column;
 
         }
 
-        &__admin{
+        &__admin {
             text-decoration: underline;
         }
 
@@ -51,5 +52,65 @@
         }
 
 
+    }
+
+    .x-header-user-dropdown {
+        position: absolute;
+        display: block;
+        //background-color: white;
+        min-width: 15%;
+        margin-top: 1em;
+        transform: translate(-1em, 0);
+        
+
+
+        //border: 1px solid #ccc;
+        //box-shadow: 1px 1px 1px black;
+        //padding: 16px;
+        // left: 15%;
+        // top: 30%;
+        //box-sizing: border-box;
+        //transition: all 0.3s ease-out;
+        z-index: 500;
+
+        a, li {
+            color: #868686;
+            background-color: white;
+            font-size: 1em;
+            padding: 6px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            margin: .1em;
+
+        }
+
+        &-logout {
+            color: $primary !important;
+
+
+            &:after {
+                content: url(../images/icons/logout_icon.svg);
+                margin-left: .5em;
+            }
+        }
+
+        &.fade-enter {
+            opacity: 0;
+            transition: opacity .2s ease-out;
+        }
+
+        &.fade-enter-active {
+            opacity: 1;
+        }
+
+        &.fade-exit {
+            opacity: 1;
+        }
+
+        &.fade-exit-active {
+            opacity: 0;
+            transition: opacity .2s ease-out;
+        }
     }
 }

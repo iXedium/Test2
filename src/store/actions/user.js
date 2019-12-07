@@ -25,16 +25,13 @@ export const changeProfileStart = () => {
 export const changeProfile = (userData, token) => {
   return dispatch => {
     dispatch(changeProfileStart());
-    console.log("userData", userData);
     axios
       .put(`/users.json/${userData.key}?auth=${token}`, userData)
       //.post("/users.json", userData)
       .then(response => {
-        console.log("response", response);
         dispatch(changeProfileSuccess(response.data.name, userData));
       })
       .catch(error => {
-        // console.log('error', error)
         dispatch(changeProfileFail(error));
       });
   };
@@ -69,8 +66,7 @@ export const fetchUserStart = () => {
 export const fetchUser = (token, userId) => {
   return dispatch => {
     dispatch(fetchUserStart());
-    const queryParams =
-      `?auth=${token}&orderBy="userId"&equalTo="${userId}"`;
+    const queryParams = `?auth=${token}&orderBy="userId"&equalTo="${userId}"`;
     axios
       .get("/users.json" + queryParams)
       .then(res => {
@@ -81,7 +77,6 @@ export const fetchUser = (token, userId) => {
             id: key
           });
         }
-        console.log("fetchedUser", fetchedUser[0]);
         dispatch(fetchUserSuccess(fetchedUser[0]));
       })
       .catch(err => {
