@@ -22,7 +22,34 @@
         margin: 1em;
     }
 
-    .x-user {
+    .x-user-header {
         margin: 1em 2em;
+        display: flex;
+        font-size: 1.25em;
+
+
+
+        &__text {
+            margin-left: 1em;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        &__admin{
+            text-decoration: underline;
+        }
+
+
+        svg {
+            position: relative;
+            left: .4em;
+            top: -.1em;
+            font-size: 1.25em;
+            // padding-left: 2em;
+            // margin-left: 2em;
+        }
+
+
     }
 }

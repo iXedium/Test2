@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
 import { Button } from "reactstrap";
 
 import * as actions from "../../store/actions/index";
@@ -38,7 +38,6 @@ const Login = props => {
       touched: false
     }
   });
-  const [isSignup, setIsSignup] = useState(false);
 
   useEffect(() => {
     if (props.authRedirectPath !== "/") {
@@ -62,7 +61,7 @@ const Login = props => {
 
   const loginHandler = event => {
     event.preventDefault();
-    props.onAuth(authForm.username.value, authForm.password.value, isSignup);
+    props.onAuth(authForm.username.value, authForm.password.value);
   };
 
   return (
@@ -108,8 +107,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onAuth: (email, password, isSignup) =>
-      dispatch(actions.auth(email, password, isSignup)),
+    onAuth: (email, password) =>
+      dispatch(actions.auth(email, password)),
     onSetAuthRedirectPath: () => dispatch(actions.setAuthRedirectPath("/"))
   };
 };
