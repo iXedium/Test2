@@ -1,9 +1,9 @@
 import React from "react";
 import { Button } from "reactstrap";
 import { MDBDataTable } from "mdbreact";
-import { organisationData as data } from "../data/Organisations_data";
+import { organisationData as data } from "../../data/Organisations_data";
 
-import plusSign from "../assets/images/icons/button_plus.svg";
+import plusSign from "../../assets/images/icons/button_plus.svg";
 
 const Organisations = () => {
   return (

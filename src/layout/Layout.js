@@ -7,11 +7,12 @@ import Header from "../components/Header/Header";
 import SideBar from "./SideBar";
 
 
-import Dashboard from "../components/Dashboard";
-import Organisations from "../components/Organisations";
-import Patients from "../components/Patients";
-import Staff from "../components/Staff";
-import Settings from "../components/Settings";
+import Dashboard from "../components/Main/Dashboard";
+import Organisations from "../components/Main/Organisations";
+import Patients from "../components/Main/Patients";
+import Staff from "../components/Main/Staff";
+import Settings from "../components/Main/Settings";
+import Profile from "../components/Admin/Profile";
 // import Login from "../containers/Login";
 
 const Layout = props => {
@@ -37,6 +38,7 @@ const Layout = props => {
         <Route path="/staff" render={props => <Staff {...props} />} />
         <Route path="/patients" render={props => <Patients {...props} />} />
         <Route path="/settings" render={props => <Settings {...props} />} />
+        <Route path="/profile" render={props => <Profile {...props} />} />
         {/* <Route path="/logout" component={Logout} /> */}
         <Route path="/" exact render={props => <Dashboard {...props} />} />
         <Redirect to="/" />

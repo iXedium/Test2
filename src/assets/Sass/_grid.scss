@@ -13,21 +13,26 @@
     }
 
     .x-grid-number {
-        padding: 0.8em;
-        margin-top: 0.8em;
+        //padding: 0.8em;
+        margin: 0;
+        margin-top: 3rem;
         color: $darkBlue;
         font-weight: bold;
         font-size: 2em;
         text-align: center;
-        border-bottom: 3px solid $darkBlue;
         align-self: center;
     }
-
+    
     .x-grid-line {
         color: $darkBlue;
+        border-bottom: 4px solid $darkBlue;
+        margin: auto;
+        width: 60%;
+        //flex-grow: 1;
     }
 
     .x-grid-title {
+        margin-bottom: 2rem;
         color: black;
         text-align: center;
         font-weight: bold;

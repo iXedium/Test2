@@ -8,6 +8,7 @@
 @import 'grid';
 @import 'organisations';
 @import 'login';
+@import 'profile';
 
 * {
   margin: 0;
@@ -51,8 +52,18 @@ body {
 
 .x-page-title {
   color: $darkBlue;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 35px;
+  letter-spacing: 0;
+
 }
 
 .x-breadcrumb {
   margin: 1em;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0;
+  color: #333;
 }

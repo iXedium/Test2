@@ -1,0 +1,67 @@
+.x-profile-container {
+    background-color: white;
+    width: 98%;
+    margin: auto;
+    margin-top: 8em;
+    padding: 3em 3em 0 5em;
+    height: 30em;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    //flex: 1 0;
+
+    &-header {
+        display: flex;
+        padding-bottom: 2em;
+        border-bottom: 1px solid #333;
+        &-name {
+            flex-grow: 1;
+            color: $darkBlue;
+            font: 600 30px/38px 'Rajdhani';
+
+            span {
+                color: $textGrey;
+                font-size: 18px;
+                line-height: 23px;
+                letter-spacing: 0;
+                vertical-align: middle;
+            }
+        }
+        button {
+            width: 4.3rem;
+        }
+    }
+    &-grid{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 20em;
+        width: 20%;
+    }
+
+    &-block{
+        display: flex;
+        flex-direction: column;
+        margin-top: 3em; 
+        // background-color: #f04;
+        width: 16em;
+        label{
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+            color: $textGrey;
+            margin: 0;
+        }
+        input{
+            border: none;
+            background-color: transparent;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 24px;
+            color: $darkBlue;
+            overflow: visible;
+            text-overflow: ellipsis;
+        }
+    }
+
+}
