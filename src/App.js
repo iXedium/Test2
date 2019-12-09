@@ -12,7 +12,7 @@ const Layout = React.lazy(() => {
 const App = props => {
   useEffect(() => {
     props.onTryAutoSignup();
-    console.log('App useEffect')
+    // console.log('App useEffect')
   }, [props]);
 
   // const [isAuthenticated, setIsAuthenticated] = useState(false);

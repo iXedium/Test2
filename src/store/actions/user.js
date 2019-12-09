@@ -78,7 +78,7 @@ export const fetchUser = (token, userId) => {
             userKey: key
           });
         }
-        console.log("fetchedUser", fetchedUser[0]);
+        // console.log("fetchedUser", fetchedUser[0]);
         dispatch(fetchUserSuccess(fetchedUser[0]));
       })
       .catch(err => {

@@ -4,7 +4,8 @@ import { Button } from "reactstrap";
 import { updateObject } from "../../shared/utility";
 
 import * as actions from "../../store/actions/index";
-import { dispatch } from "../../../../../../Users/alire/AppData/Local/Microsoft/TypeScript/3.6/node_modules/rxjs/internal/observable/pairs";
+import Modal from "../UI/Modal";
+import ChangePasswordModal from "./ChangePasswordModal";
 
 const Profile = props => {
   const [userData, setUserData] = useState({
@@ -14,6 +15,7 @@ const Profile = props => {
     email: ""
   });
   const [isSave, setIsSave] = useState(false);
+  const [isChangingPassword, setIsChangingPassword] = useState(false);
 
   useEffect(() => {
     props.onFetchUser(props.token, props.userId);
@@ -23,7 +25,7 @@ const Profile = props => {
       admin: props.admin || "",
       email: props.email || ""
     });
-    console.log("Profile useEffect");
+    // console.log("Profile useEffect");
   }, [props]);
 
   const onChangeHandler = event => {
@@ -57,67 +59,103 @@ const Profile = props => {
     setIsSave(!isSave);
     props.onFetchUser(props.token, props.userId);
   };
+
+  const changePasswordClickHandler = () => {
+    setIsChangingPassword(true);
+  };
+
+  const changePasswordCancelHandler = () => {
+    setIsChangingPassword(false);
+  };
+
   return (
-    <div className="x-profile">
-      <h1 className="x-page-title">My Profile</h1>
-      <p className="x-breadcrumb">BREADCRUMB</p>
-      <form className={`x-profile-container ${isSave ? "edit" : null}`}>
-        <div className="x-profile-container-header">
-          <div className="x-profile-container-header-name">
-            {props.first} {props.last} <span>-[{props.admin}]</span>
+    <React.Fragment>
+      <Modal
+        show={isChangingPassword}
+        modalClosed={changePasswordCancelHandler}
+      >
+        <ChangePasswordModal />
+      </Modal>
+      {/* {isChangingPassword ? (
+        <Modal show={isChangingPassword} modalClosed={changePasswordCancelHandler}>
+          <ChangePasswordModal />
+        </Modal>
+      ) : null} */}
+      <div className="x-profile">
+        <h1 className="x-page-title">My Profile</h1>
+        <p className="x-breadcrumb">BREADCRUMB</p>
+        <form className={`x-profile-container ${isSave ? "edit" : null}`}>
+          <div className="x-profile-container-header">
+            <div className="x-profile-container-header-name">
+              {props.first} {props.last} <span>-[{props.admin}]</span>
+            </div>
+            <Button color="primary" onClick={editToggleHandler}>
+              {isSave ? "Save" : "Edit"}
+            </Button>
           </div>
-          <Button color="primary" onClick={editToggleHandler}>
-            {isSave ? "Save" : "Edit"}
-          </Button>
-        </div>
-        <div className="x-profile-container-grid">
-          <div className="x-profile-container-block">
-            <label>First Name</label>
-            <input
-              type="text"
-              name="first"
-              value={userData.first}
-              readOnly={!isSave}
-              onChange={event => onChangeHandler(event)}
-            />
+          <div className="x-profile-container-grid">
+            <div className="x-profile-container-block">
+              <label>First Name</label>
+              <input
+                type="text"
+                name="first"
+                value={userData.first}
+                readOnly={!isSave}
+                onChange={event => onChangeHandler(event)}
+              />
+            </div>
+            <div className="x-profile-container-block">
+              <label>Last Name</label>
+              <input
+                type="text"
+                name="last"
+                value={userData.last}
+                readOnly={!isSave}
+                onChange={event => onChangeHandler(event)}
+              />
+            </div>
+            <div className="x-profile-container-block">
+              <label>Administrator Level</label>
+              <input
+                type="text"
+                name="admin"
+                value={userData.admin}
+                readOnly={!isSave}
+                onChange={event => onChangeHandler(event)}
+              />
+            </div>
+            <div className="x-profile-container-block x-col-2">
+              <label>Email Address</label>
+              <input
+                type="text"
+                name="email"
+                value={userData.email}
+                readOnly={!isSave}
+                onChange={event => onChangeHandler(event)}
+              />
+            </div>
+            <div className="x-profile-container-block x-col-2">
+              <div id="password-block">
+                <label id="password-label">Password</label>
+                <label
+                  id="password-change"
+                  className={!isSave ? "x-hidden" : ""}
+                  onClick={changePasswordClickHandler}
+                >
+                  Change Password
+                </label>
+              </div>
+              <input
+                id="password-input"
+                type="password"
+                value="password"
+                readOnly
+              />
+            </div>
           </div>
-          <div className="x-profile-container-block">
-            <label>Last Name</label>
-            <input
-              type="text"
-              name="last"
-              value={userData.last}
-              readOnly={!isSave}
-              onChange={event => onChangeHandler(event)}
-            />
-          </div>
-          <div className="x-profile-container-block">
-            <label>Administrator Level</label>
-            <input
-              type="text"
-              name="admin"
-              value={userData.admin}
-              readOnly={!isSave}
-              onChange={event => onChangeHandler(event)}
-            />
-          </div>
-          <div className="x-profile-container-block x-col-2">
-            <label>Email Address</label>
-            <input
-              type="text"
-              name="email"
-              value={userData.email}
-              readOnly={!isSave}
-              onChange={event => onChangeHandler(event)}
-            />
-          </div>
-          <div className="x-profile-container-block x-col-2">
-            <label>Password</label>
-            <input type="password" value="password" readOnly />
-          </div>
-        </div>
-      </form>
-    </div>
+        </form>
+      </div>
+    </React.Fragment>
   );
 };
 

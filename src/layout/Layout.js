@@ -22,7 +22,7 @@ const Layout = props => {
   let routes = (
     <Switch>
       {/* <Route path="/auth" render={props => <Auth {...props} />} /> */}
-      {/* <Route path="/" exact component={BurgerBuilder} /> */}
+      {/* <Route path="/" exact component={Dashboard} /> */}
       <Redirect to="/" />
     </Switch>
   );
@@ -41,7 +41,7 @@ const Layout = props => {
         <Route path="/profile" render={props => <Profile {...props} />} />
         {/* <Route path="/logout" component={Logout} /> */}
         <Route path="/" exact render={props => <Dashboard {...props} />} />
-        <Redirect to="/" />
+        <Redirect to="/dashboard" />
       </Switch>
     );
   }

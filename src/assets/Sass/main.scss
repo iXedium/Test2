@@ -3,12 +3,17 @@
 // @import "bootstrap/scss/_functions";
 // @import "bootstrap/scss/_variables";
 // @import "bootstrap/scss/_mixins";
+@import 'transitions';
 @import 'header';
 @import 'sidebar';
 @import 'grid';
 @import 'organisations';
 @import 'login';
 @import 'profile';
+@import 'modal';
+@import 'backdrop';
+@import 'changePasswordModal';
+
 
 * {
   margin: 0;

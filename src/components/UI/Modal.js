@@ -1,7 +1,9 @@
 import React from "react";
 import CSSTransition from "react-transition-group/CSSTransition";
 
-const HeaderUserDropdown = props => {
+import Backdrop from "./Backdrop";
+
+const Modal = props => {
   return (
     <CSSTransition
       mountOnEnter
@@ -10,9 +12,12 @@ const HeaderUserDropdown = props => {
       timeout={200}
       classNames="t-fade"
     >
-      <div className="x-header-user-dropdown">{props.children}</div>
+      <React.Fragment>
+        <Backdrop show clicked={props.modalClosed} />
+        <div className="x-modal">{props.children}</div>
+      </React.Fragment>
     </CSSTransition>
   );
 };
 
-export default HeaderUserDropdown;
+export default Modal;

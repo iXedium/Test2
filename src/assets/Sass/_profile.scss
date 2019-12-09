@@ -8,6 +8,8 @@
     border-radius: 5px;
     display: flex;
     flex-direction: column;
+    transition: all .3s ease;
+    // user-select: none;
     //flex: 1 0;
 
     &-header {
@@ -48,6 +50,9 @@
         margin: 3em 3em 0 0;
         // background-color: #f04;
         width: 14em;
+        pointer-events: none;
+        border-bottom: transparent solid 1px;
+
 
         label {
             font-weight: 500;
@@ -68,6 +73,20 @@
             text-overflow: ellipsis;
         }
 
+        #password-block {
+            display: flex;
+
+            #password-label {
+                flex-grow: 1;
+            }
+
+            #password-change {
+                cursor: pointer;
+                color: $primary;
+                text-decoration: underline;
+            }
+        }
+
     }
 
     .x-col-2 {
@@ -79,6 +98,22 @@
 
         .x-profile-container-block {
             border-bottom: #333 solid 1px;
+            // user-select: auto;
+            pointer-events: auto;
+
+            input {
+                color: #333;
+
+                
+            }
+            #password-input {
+                pointer-events: none;
+            }
+
         }
     }
+}
+
+.x-hidden {
+    visibility: hidden;
 }

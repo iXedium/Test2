@@ -94,23 +94,5 @@
                 margin-left: .5em;
             }
         }
-
-        &.fade-enter {
-            opacity: 0;
-            transition: opacity .2s ease-out;
-        }
-
-        &.fade-enter-active {
-            opacity: 1;
-        }
-
-        &.fade-exit {
-            opacity: 1;
-        }
-
-        &.fade-exit-active {
-            opacity: 0;
-            transition: opacity .2s ease-out;
-        }
     }
 }

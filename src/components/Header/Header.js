@@ -20,7 +20,7 @@ const Header = props => {
     //   userID: props.userId
     // };
     // props.onChangeProfile(userData, props.token);
-    console.log('Header useEffect')
+    // console.log('Header useEffect')
   }, [props]);
 
   const date = new Date();
