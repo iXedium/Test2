@@ -20,7 +20,8 @@ const Header = props => {
     //   userID: props.userId
     // };
     // props.onChangeProfile(userData, props.token);
-  }, []);
+    console.log('Header useEffect')
+  }, [props]);
 
   const date = new Date();
   const dateFormat = require("dateformat");
@@ -44,7 +45,7 @@ const Header = props => {
       <HeaderUser admin={props.admin} onClick={dropDownHandler}>
         {props.first} {props.last}
         <HeaderUserDropdown show={showDropdown}>
-          <Link to='/profile' exact>
+          <Link to='/profile' exact='true'>
             Edit Profile
           </Link>
           <li className="x-header-user-dropdown-logout" 

@@ -22,11 +22,12 @@ export const changeProfileStart = () => {
   };
 };
 
-export const changeProfile = (userData, token) => {
+export const changeProfile = (userData, userKey, token) => {
+  console.log(userData);
   return dispatch => {
     dispatch(changeProfileStart());
     axios
-      .put(`/users.json/${userData.key}?auth=${token}`, userData)
+      .put(`/users/${userKey}.json?auth=${token}`, userData)
       //.post("/users.json", userData)
       .then(response => {
         dispatch(changeProfileSuccess(response.data.name, userData));
@@ -74,9 +75,10 @@ export const fetchUser = (token, userId) => {
         for (let key in res.data) {
           fetchedUser.push({
             ...res.data[key],
-            id: key
+            userKey: key
           });
         }
+        console.log("fetchedUser", fetchedUser[0]);
         dispatch(fetchUserSuccess(fetchedUser[0]));
       })
       .catch(err => {

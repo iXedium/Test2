@@ -1,4 +1,4 @@
-import React, { useState, Suspense, useEffect } from "react";
+import React, { Suspense, useEffect } from "react";
 import { BrowserRouter, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 
@@ -12,7 +12,8 @@ const Layout = React.lazy(() => {
 const App = props => {
   useEffect(() => {
     props.onTryAutoSignup();
-  }, []);
+    console.log('App useEffect')
+  }, [props]);
 
   // const [isAuthenticated, setIsAuthenticated] = useState(false);
   let layout = props.isAuthenticated ? <Layout isAuthenticated /> : <Login />;

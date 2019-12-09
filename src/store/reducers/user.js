@@ -6,6 +6,7 @@ const initialState = {
   last: null,
   email: null,
   admin: null,
+  userKey: null,
   loading: false,
   changed: false
 };
@@ -42,6 +43,7 @@ const fetchUserSuccess = (state, action) => {
     last: action.user.last,
     email: action.user.email,
     admin: action.user.admin,
+    userKey: action.user.userKey,
     loading: false
   });
 };

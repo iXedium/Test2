@@ -43,7 +43,8 @@ const Login = props => {
     if (props.authRedirectPath !== "/") {
       props.onSetAuthRedirectPath();
     }
-  }, []);
+    console.log("Login useEffect");
+  }, [props]);
 
   const inputChangedHandler = (event, controlName) => {
     const updatedControls = updateObject(authForm, {

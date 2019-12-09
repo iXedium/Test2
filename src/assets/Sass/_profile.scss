@@ -14,6 +14,7 @@
         display: flex;
         padding-bottom: 2em;
         border-bottom: 1px solid #333;
+
         &-name {
             flex-grow: 1;
             color: $darkBlue;
@@ -27,11 +28,13 @@
                 vertical-align: middle;
             }
         }
+
         button {
             width: 4.3rem;
         }
     }
-    &-grid{
+
+    &-grid {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
@@ -39,20 +42,22 @@
         width: 20%;
     }
 
-    &-block{
+    &-block {
         display: flex;
         flex-direction: column;
-        margin-top: 3em; 
+        margin: 3em 3em 0 0;
         // background-color: #f04;
-        width: 16em;
-        label{
+        width: 14em;
+
+        label {
             font-weight: 500;
             font-size: 14px;
             line-height: 16px;
             color: $textGrey;
             margin: 0;
         }
-        input{
+
+        input {
             border: none;
             background-color: transparent;
             font-size: 20px;
@@ -62,6 +67,18 @@
             overflow: visible;
             text-overflow: ellipsis;
         }
+
     }
 
+    .x-col-2 {
+        width: 24em;
+    }
+
+    &.edit {
+        background-color: #e3e3e3;
+
+        .x-profile-container-block {
+            border-bottom: #333 solid 1px;
+        }
+    }
 }
