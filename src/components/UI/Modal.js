@@ -12,10 +12,10 @@ const Modal = props => {
       timeout={200}
       classNames="t-fade"
     >
-      <React.Fragment>
+      <div>
         <Backdrop show clicked={props.modalClosed} />
         <div className="x-modal">{props.children}</div>
-      </React.Fragment>
+      </div>
     </CSSTransition>
   );
 };

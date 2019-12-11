@@ -76,11 +76,6 @@ const Profile = props => {
       >
         <ChangePasswordModal />
       </Modal>
-      {/* {isChangingPassword ? (
-        <Modal show={isChangingPassword} modalClosed={changePasswordCancelHandler}>
-          <ChangePasswordModal />
-        </Modal>
-      ) : null} */}
       <div className="x-profile">
         <h1 className="x-page-title">My Profile</h1>
         <p className="x-breadcrumb">BREADCRUMB</p>
