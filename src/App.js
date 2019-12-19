@@ -1,6 +1,8 @@
 import React, { Suspense, useEffect } from "react";
 import { BrowserRouter, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
+import firebase from "firebase";
+
 
 import * as actions from "./store/actions/index";
 import Login from "./containers/Auth/Login";
@@ -8,6 +10,12 @@ import Login from "./containers/Auth/Login";
 const Layout = React.lazy(() => {
   return import("./layout/Layout");
 });
+
+firebase.initializeApp({
+  apiKey: "AIzaSyAxNywiabqYN2H_21YB76E4QPQBk0dgZ3U",
+  authDomain: "viscgo-sample.firebaseapp.com"
+});
+
 
 const App = props => {
   useEffect(() => {
