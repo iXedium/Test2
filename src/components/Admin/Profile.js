@@ -4,7 +4,7 @@ import { Button } from "reactstrap";
 import { updateObject } from "../../shared/utility";
 
 import * as actions from "../../store/actions/index";
-import Modal from "../UI/Modal";
+import Modal from "../../containers/Modals/Modal";
 import ChangePasswordModal from "./ChangePasswordModal";
 
 const Profile = props => {

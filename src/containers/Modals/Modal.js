@@ -1,7 +1,7 @@
 import React from "react";
 import CSSTransition from "react-transition-group/CSSTransition";
 
-import Backdrop from "./Backdrop";
+import Backdrop from "../../components/UI/Backdrop";
 
 const Modal = props => {
   return (

@@ -5,6 +5,7 @@
 // @import "bootstrap/scss/_mixins";
 @import 'transitions';
 @import 'header';
+@import 'auth-modal';
 @import 'sidebar';
 @import 'grid';
 @import 'organisations';
@@ -12,7 +13,7 @@
 @import 'profile';
 @import 'modal';
 @import 'backdrop';
-@import 'changePasswordModal';
+@import 'change-password-modal';
 
 
 * {
@@ -20,8 +21,8 @@
 }
 
 html {
-  height: 1080px;
-  width: 1920px;
+  height: 100%;
+  //width: 1920px;
   // font-family: roboto;
   margin: auto;
   background-color: white;
