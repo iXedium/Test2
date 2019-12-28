@@ -42,7 +42,7 @@ export const organisationData = {
              tel: "0161 123 4567",
              city: "Manchester",
              status: "Pending",
-             buttons: <Button>View</Button>
+             buttons: <Button color='primary'>View</Button>
            },
            {
              date: "28/11/2019",
@@ -50,7 +50,7 @@ export const organisationData = {
              tel: "0161 123 4567",
              city: "Manchester",
              status: "Pending",
-             buttons: <Button>View</Button>
+             buttons: <Button color='primary'>View</Button>
            },
            {
              date: "28/11/2019",
@@ -58,7 +58,7 @@ export const organisationData = {
              tel: "0161 123 4567",
              city: "Manchester",
              status: "Pending",
-             buttons: <Button>View</Button>
+             buttons: <Button color='primary'>View</Button>
            },
            {
              date: "28/11/2019",
@@ -66,7 +66,7 @@ export const organisationData = {
              tel: "0161 123 4567",
              city: "Manchester",
              status: "Pending",
-             buttons: <Button>View</Button>
+             buttons: <Button color='primary'>View</Button>
            },
            {
              date: "28/11/2019",
@@ -74,7 +74,7 @@ export const organisationData = {
              tel: "0161 123 4567",
              city: "Manchester",
              status: "Pending",
-             buttons: <Button>View</Button>
+             buttons: <Button color='primary'>View</Button>
            },
            {
              date: "28/11/2019",
@@ -82,7 +82,7 @@ export const organisationData = {
              tel: "0161 123 4567",
              city: "Manchester",
              status: "Pending",
-             buttons: <Button>View</Button>
+             buttons: <Button color='primary'>View</Button>
            },
            {
              date: "28/11/2019",
@@ -90,7 +90,7 @@ export const organisationData = {
              tel: "0161 123 4567",
              city: "Manchester",
              status: "Pending",
-             buttons: <Button>View</Button>
+             buttons: <Button color='primary'>View</Button>
            },
            {
              date: "28/11/2019",
@@ -98,7 +98,7 @@ export const organisationData = {
              tel: "0161 123 4567",
              city: "Manchester",
              status: "Pending",
-             buttons: <Button>View</Button>
+             buttons: <Button color='primary'>View</Button>
            }
          ]
        };
