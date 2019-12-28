@@ -5,7 +5,7 @@ import firebase from "firebase";
 
 
 import * as actions from "./store/actions/index";
-import Login from "./containers/Auth/Login";
+// import Login from "./containers/Auth/Login";
 
 const Layout = React.lazy(() => {
   return import("./layout/Layout");
@@ -19,16 +19,16 @@ firebase.initializeApp({
 
 const App = props => {
   useEffect(() => {
-    props.onTryAutoSignup();
-    // console.log('App useEffect')
+    props.onTryAutoSignin();
   }, [props]);
 
-  // const [isAuthenticated, setIsAuthenticated] = useState(false);
-  let layout = props.isAuthenticated ? <Layout isAuthenticated /> : <Login />;
+  // let layout = props.isAuthenticated ? <Layout isAuthenticated /> : <Login />;
 
   return (
     <BrowserRouter>
-      <Suspense fallback={<p>Loading...</p>}>{layout}</Suspense>
+      <Suspense fallback={<p>Loading...</p>}>
+        <Layout isAuthenticated={props.isAuthenticated} />
+      </Suspense>
     </BrowserRouter>
   );
 };
@@ -41,7 +41,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onTryAutoSignup: () => dispatch(actions.authCheckState())
+    onTryAutoSignin: () => dispatch(actions.authCheckState())
   };
 };
 
