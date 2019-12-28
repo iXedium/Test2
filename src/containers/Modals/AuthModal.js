@@ -8,7 +8,7 @@ const AuthModal = props => {
         <div className="x-auth-modal__logo">
           <img src={logo_img} alt="Logo" />
         </div>
-        <div className="x-auth-modal__children">{props.children}</div>
+        <div className={`x-auth-modal__children ${props.classNames}`}>{props.children}</div>
       </div>
     </div>
   );

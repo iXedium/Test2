@@ -1,42 +1,7 @@
 #login {
-    display: flex;
-    flex-direction: column;
-    padding: 2em 3.5em;
-    padding-top: 4em;
-    color: #707070;
+    
 
-    input {
-        font-size: 1.2em;
-        margin: 1em 0;
-        padding: 1em;
-        text-align: center;
-        border-radius: 5px;
-        border-color: #DBDBDB;
-        border-style: solid;
-    }
-
-    hr {
-        border-bottom: black 1px solid;
-        border-radius: 5px;
-        color: black;
-    }
-
-    Button {
-        font-size: 1.2em;
-        margin: 1em 0;
-        padding: 1em;
-    }
-
-    p {
-        text-align: center;
-        font-weight: bold;
-
-
-        a {
-            color: inherit;
-            text-decoration: underline;
-        }
-    }
+    
 
 
 }

@@ -67,7 +67,6 @@ const Login = props => {
 
   return (
     <AuthModal>
-      <form id='login'>
         <input
           type="text"
           placeholder="Username"
@@ -85,9 +84,8 @@ const Login = props => {
           Login
         </Button>
         <p>
-          Did you <a href="/#">forget your password?</a>
+          Did you <a href="/reset-password">forget your password?</a>
         </p>
-      </form>
     </AuthModal>
   );
 };

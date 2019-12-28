@@ -26,6 +26,55 @@
         background-color: #f9f9f9;
         border-radius: 0 0 5px 5px;
         font-weight: bold;
-    }
+        display: flex;
+        flex-direction: column;
+        padding: 2em 3.5em;
+        padding-top: 4em;
+        color: #707070;
 
+        h3{
+            text-align: center;
+        }
+
+        input {
+            font-size: 1.2em;
+            margin: 1em 0;
+            padding: 1em;
+            text-align: center;
+            border-radius: 5px;
+            border-color: #DBDBDB;
+            border-style: solid;
+        }
+        input:invalid,
+        select:invalid,
+        textarea:invalid {
+            border: 2px solid #ff7d87;
+            box-shadow: none;
+        }
+
+        hr {
+            border-bottom: black 1px solid;
+            border-radius: 5px;
+            color: black;
+        }
+
+        Button {
+            font-size: 1.2em;
+            margin: 1em 0;
+            padding: 1em;
+        }
+
+        p {
+            text-align: center;
+            font-weight: bold;
+
+
+            a {
+                color: inherit;
+                text-decoration: underline;
+            }
+        }
+    }
+    
 }
+
