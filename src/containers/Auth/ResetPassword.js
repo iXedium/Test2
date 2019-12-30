@@ -1,52 +1,58 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import AuthModal from "../Modals/AuthModal";
 import { Button } from "reactstrap";
 import { useFormik } from "formik";
+import * as Yup from "yup";
 
 const ResetPassword = props => {
-  const [value, setValue] = useState("");
   const formik = useFormik({
     initialValues: { email: "" },
+
+    validationSchema: Yup.object({
+      email: Yup.string()
+        .email("Invalid email address")
+        .required("Email is required")
+    }),
+
     onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
+      if (formik.isValid) {
+        props.history.push({
+          pathname: "/email-sent",
+          state: { email: values.email }
+        });
+      }
     }
   });
-  useEffect(() => {
-    console.log('formik', formik);
-  }, [formik]);
-
-  // const inputChangedHandler = event => {
-  //   setValue(event.target.value);
-  // };
-
-  const resetHandler = event => {
-    event.preventDefault();
-    props.history.push({ pathname: "/email-sent", state: { email: value } });
-  };
 
   return (
-    <AuthModal classNames="x-modal-reset-password">
-      <h3>Reset Password</h3>
-      <p>
-        Enter the email address associated with your account, and we’ll email
-        you a link to reset your password
-      </p>
-      <input
-        id="email"
-        name="email"
-        type="email"
-        placeholder="Email Address"
-        value={formik.values.email}
-        onChange={formik.handleChange}
-      />
-      <Button
-        type="submit"
-        color="primary"
-        onClick={resetHandler}
-        // disabled={!formik.isSubmitting}
+    <AuthModal>
+      <form
+        onSubmit={formik.handleSubmit}
+        className="x-auth-modal__children x-modal-reset-password"
       >
-        Reset Password
-      </Button>
+        <h3>Reset Password</h3>
+        <p>
+          Enter the email address associated with your account, and we’ll email
+          you a link to reset your password
+        </p>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="Email Address"
+          value={formik.values.email}
+          onBlur={formik.handleBlur}
+          onChange={formik.handleChange}
+        />
+        {formik.touched.email && formik.errors.email && (
+          <div className="x-auth-modal__invalid-feedback">
+            {formik.errors.email}
+          </div>
+        )}
+        <Button type="submit" color="primary" disabled={formik.isSubmitting}>
+          Reset Password
+        </Button>
+      </form>
     </AuthModal>
   );
 };

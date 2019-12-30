@@ -9,15 +9,17 @@ const EmailSent = props => {
   };
   console.log("props.location.state", props.location.state);
   return (
-    <AuthModal classNames="x-modal-reset-password">
-      <h3>Reset Password</h3>
-      <p>
-        Thank you. A reset password link has been sent to{" "}
-        {props.location.state.email}. Please check your junk/spam folder.
-      </p>
-      <Button color="primary" onClick={okHandler}>
-        OK
-      </Button>
+    <AuthModal>
+      <div className="x-auth-modal__children x-modal-reset-password">
+        <h3>Reset Password</h3>
+        <p>
+          Thank you. A reset password link has been sent to{" "}
+          {props.location.state.email}. Please check your junk/spam folder.
+        </p>
+        <Button color="primary" onClick={okHandler}>
+          OK
+        </Button>
+      </div>
     </AuthModal>
   );
 };
