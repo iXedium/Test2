@@ -35,14 +35,20 @@ const Login = props => {
     console.log("loading", props.loading);
   }, [props.loading]);
 
-
   return (
     <AuthModal>
       <form
         className="x-auth-modal__children x-modal-login"
         onSubmit={formik.handleSubmit}
       >
-        {props.error && <div className="x-auth-modal__invalid-feedback">{props.error.message}</div>}
+        {props.error && props.error.message === "EMAIL_NOT_FOUND" && (
+          <div
+            style={{ textAlign: "center" }}
+            className="x-auth-modal__invalid-feedback"
+          >
+            Email not found!
+          </div>
+        )}
         <input
           type="email"
           name="username"
