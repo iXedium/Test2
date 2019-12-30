@@ -1,41 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
-// import { Redirect } from "react-router-dom";
 import { Button } from "reactstrap";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 import * as actions from "../../store/actions/index";
-import { updateObject, checkValidity } from "../../shared/utility";
 import AuthModal from "../Modals/AuthModal";
 
 const Login = props => {
-  const [authForm, setAuthForm] = useState({
-    username: {
-      elementType: "input",
-      elementConfig: {
-        type: "text",
-        placeholder: "Username"
-      },
-      value: "",
-      validation: {
-        required: true,
-        isEmail: false
-      },
-      valid: false,
-      touched: false
-    },
-    password: {
-      elementType: "input",
-      elementConfig: {
-        type: "password",
-        placeholder: "Password"
-      },
-      value: "",
-      validation: {
-        required: true,
-        minLength: 6
-      },
-      valid: false,
-      touched: false
+  const formik = useFormik({
+    initialValues: { username: "", password: "" },
+    validationSchema: Yup.object({
+      username: Yup.string()
+        .email("Username must be an email address")
+        .required("Username is required"),
+      password: Yup.string().required("Password is required")
+    }),
+
+    onSubmit: values => {
+      // alert(JSON.stringify(values, null, 2));
+      if (formik.isValid) {
+        props.onAuth(values.username, values.password);
+      }
     }
   });
 
@@ -43,57 +29,64 @@ const Login = props => {
     if (props.authRedirectPath !== "/") {
       props.onSetAuthRedirectPath();
     }
-    // console.log("Login useEffect");
   }, [props]);
 
-  const inputChangedHandler = (event, controlName) => {
-    const updatedControls = updateObject(authForm, {
-      [controlName]: updateObject(authForm[controlName], {
-        value: event.target.value,
-        valid: checkValidity(
-          event.target.value,
-          authForm[controlName].validation
-        ),
-        touched: true
-      })
-    });
-    setAuthForm(updatedControls);
-  };
+  useEffect(() => {
+    console.log("loading", props.loading);
+  }, [props.loading]);
 
-  const loginHandler = event => {
-    event.preventDefault();
-    props.onAuth(authForm.username.value, authForm.password.value);
-  };
 
   return (
     <AuthModal>
+      <form
+        className="x-auth-modal__children x-modal-login"
+        onSubmit={formik.handleSubmit}
+      >
+        {props.error && <div className="x-auth-modal__invalid-feedback">{props.error.message}</div>}
         <input
-          type="text"
+          type="email"
+          name="username"
           placeholder="Username"
-          name="usename"
-          onChange={event => inputChangedHandler(event, "username")}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.username}
         />
+        {formik.touched.username && formik.errors.username && (
+          <div className="x-auth-modal__invalid-feedback">
+            {formik.errors.username}
+          </div>
+        )}
         <input
           type="password"
           placeholder="Password"
           name="password"
-          onChange={event => inputChangedHandler(event, "password")}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.password}
         />
+        {formik.touched.password && formik.errors.password && (
+          <div className="x-auth-modal__invalid-feedback">
+            {formik.errors.password}
+          </div>
+        )}
         <hr />
-        <Button color="primary" onClick={loginHandler}>
+        <Button color="primary" type="submit" disabled={props.loading}>
           Login
         </Button>
         <p>
           Did you <a href="/reset-password">forget your password?</a>
         </p>
+      </form>
     </AuthModal>
   );
 };
 
 const mapStateToProps = state => {
-  return {};
+  return {
+    loading: state.auth.loading,
+    error: state.auth.error
+  };
 };
-
 const mapDispatchToProps = dispatch => {
   return {
     onAuth: (email, password) => dispatch(actions.auth(email, password)),
