@@ -1,9 +1,9 @@
-.t-fade-enter  {
+.t-fade-enter {
     opacity: 0;
     transition: opacity .2s ease-out;
 }
 
-.t-fade-enter-active  {
+.t-fade-enter-active {
     opacity: 1;
 }
 
@@ -11,7 +11,27 @@
     opacity: 1;
 }
 
-.t-fade-exit-active{
+.t-fade-exit-active {
     opacity: 0;
     transition: opacity .2s ease-out;
+}
+
+
+//------------
+
+.t-shadow-lift {
+    &:hover {
+        box-shadow: 0 10px 6px -6px #777;
+        transition: all .4s ease-out;
+        position: relative;
+        transform: translateY(-10px);
+    }
+}
+
+.t-shift-right {
+    &:hover {
+        transition: all .4s ease-out;
+        position: relative;
+        transform: translateX(4px);
+    }
 }

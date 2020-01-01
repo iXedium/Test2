@@ -31,9 +31,10 @@ const Login = props => {
     }
   }, [props]);
 
-  useEffect(() => {
-    console.log("loading", props.loading);
-  }, [props.loading]);
+  // useEffect(() => {
+  //   console.log("loading", props.loading);
+  // }, [props.loading]);
+
 
   return (
     <AuthModal>
@@ -90,7 +91,7 @@ const Login = props => {
 const mapStateToProps = state => {
   return {
     loading: state.auth.loading,
-    error: state.auth.error
+    error: state.auth.error,
   };
 };
 const mapDispatchToProps = dispatch => {

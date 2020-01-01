@@ -1,20 +1,9 @@
 import React from "react";
 import { Route, Switch, withRouter, Redirect } from "react-router-dom";
-// import { connect } from "react-redux";
 
 import Header from "../components/Header/Header";
 import SideBar from "./SideBar";
 import EmailSent from "../containers/Auth/EmailSent";
-
-// import Dashboard from "../components/Main/Dashboard";
-// import Organisations from "../components/Main/Organisations";
-// import Patients from "../components/Main/Patients";
-// import Staff from "../components/Main/Staff";
-// import Settings from "../components/Main/Settings";
-// import Profile from "../components/Admin/Profile";
-// import Login from "../containers/Auth/Login";
-// import ResetPassword from "../containers/Auth/ResetPassword";
-// import Login from "../containers/Login";
 
 const Login = React.lazy(() => {
   return import("../containers/Auth/Login");
@@ -42,16 +31,12 @@ const Profile = React.lazy(() => {
 });
 
 const Layout = props => {
-  // const [page, setPage] = useState(1);
 
   // if not authorised:
   let routes = (
     <>
       <Switch>
-        <Route
-          path="/email-sent"
-          render={props => <EmailSent {...props} />}
-        />
+        <Route path="/email-sent" render={props => <EmailSent {...props} />} />
         <Route
           path="/reset-password"
           render={props => <ResetPassword {...props} />}

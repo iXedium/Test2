@@ -24,86 +24,12 @@ const Organisations = () => {
             btn
             hover
             data={data}
-            entries={3}
+            entries={10}
             info={false}
             entriesLabel=""
             searchLabel=" "
           />
         </div>
-        {/* <table className="table table-borderless">
-          <thead>
-            <tr>
-              <th scope="col">Date Registered</th>
-              <th scope="col">Organisation Name</th>
-              <th scope="col">Telephone</th>
-              <th scope="col">Town/City</th>
-              <th scope="col">Status</th>
-              <th scope="col"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>dd/mm/yy</td>
-              <td>Nursing Home Limited</td>
-              <td>0161 123 4567</td>
-              <td>Manchester</td>
-              <td>Pending</td>
-              <td>
-                <Button> View </Button>
-              </td>
-            </tr>
-            <tr>
-              <td>dd/mm/yy</td>
-              <td>Nursing Home Limited</td>
-              <td>0161 123 4567</td>
-              <td>Manchester</td>
-              <td>Pending</td>
-              <td>
-                <Button> View </Button>
-              </td>
-            </tr>
-            <tr>
-              <td>dd/mm/yy</td>
-              <td>Nursing Home Limited</td>
-              <td>0161 123 4567</td>
-              <td>Manchester</td>
-              <td>Pending</td>
-              <td>
-                <Button> View </Button>
-              </td>
-            </tr>
-            <tr>
-              <td>dd/mm/yy</td>
-              <td>Nursing Home Limited</td>
-              <td>0161 123 4567</td>
-              <td>Manchester</td>
-              <td>Pending</td>
-              <td>
-                <Button> View </Button>
-              </td>
-            </tr>
-            <tr>
-              <td>dd/mm/yy</td>
-              <td>Nursing Home Limited</td>
-              <td>0161 123 4567</td>
-              <td>Manchester</td>
-              <td>Pending</td>
-              <td>
-                <Button> View </Button>
-              </td>
-            </tr>
-            <tr>
-              <td>dd/mm/yy</td>
-              <td>Nursing Home Limited</td>
-              <td>0161 123 4567</td>
-              <td>Manchester</td>
-              <td>Pending</td>
-              <td>
-                <Button> View </Button>
-              </td>
-            </tr>
-          </tbody>
-        </table> */}
       </div>
     </div>
   );

@@ -2,7 +2,7 @@
 
     .bs-select {
         select {
-            display: none;
+            // display: none;
         }
     }
 
@@ -75,7 +75,7 @@
 
         th,
         td {
-            padding: 2em;
+            padding: .5rem;
             vertical-align: middle;
         }
 
@@ -84,7 +84,7 @@
         }
 
         Button {
-            width: 8em;
+            width: 100%;
         }
 
         td:nth-child(6) {

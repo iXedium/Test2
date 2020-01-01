@@ -2,6 +2,8 @@
     background-color: $primary;
     width: $sideWidth;
     padding-top: 4em;
+    flex: 0 0;
+    min-width: $sideWidth;
 }
 
 .x-side-button {
@@ -11,7 +13,7 @@
         padding: 0.6em 1.5em;
         position: relative;
         cursor: pointer;
-    }
+   }
 
     img {
         padding: 0 0.2em;

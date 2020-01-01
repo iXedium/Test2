@@ -9,9 +9,7 @@ const SideButton = props => {
       activeClassName="active"
       className="x-side-button"
     >
-      <div
-      //  className="x-side-button"
-       >
+      <div className="t-shift-right">
         <img src={props.imageSource} alt={props.title}></img>
         <span>{props.title}</span>
       </div>
