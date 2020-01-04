@@ -26,7 +26,8 @@ const App = props => {
 
   return (
     <BrowserRouter>
-      <Suspense fallback={<p>Loading...</p>}>
+      <Suspense fallback={<div className="x-loader">Loading...</div>}>
+        {/* <div className="x-loader">Loading...</div> */}
         <Layout isAuthenticated={props.isAuthenticated} />
       </Suspense>
     </BrowserRouter>
